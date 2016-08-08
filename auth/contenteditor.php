@@ -23,8 +23,6 @@ class contenteditor
 		$this->setGetID = filter_input(INPUT_GET, 'moduleID');
 		
 	}
-		
-	
 	
 	public function contenteditor()
 	{
@@ -199,7 +197,7 @@ class contenteditor
 			echo '<tr><td><br><br>&nbsp;</td></tr>';
 			
 			echo '<tr><td><b>Description: </td></tr>';
-			echo '<tr><td colspan=2><textarea rows=10 name="area2" style="width: 740px; background-color: white;">' . mb_convert_encoding(nl2br($cookbookDescription), 'UTF-8', 'UTF-8') . '</textarea></td></tr>';
+			echo '<tr><td colspan=2><textarea rows=10 name="area2" style="width: 740px; background-color: white;">' . nl2br($cookbookDescription) . '</textarea></td></tr>';
 			echo '<tr><td><input type="Submit" name="Submit" value="Update"></td></tr>';
 			echo '</table>';
 			

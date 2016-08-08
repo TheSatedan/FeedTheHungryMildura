@@ -16,7 +16,7 @@ if (session_status() == PHP_SESSION_NONE)
  */
 function databaseConnection()
 {
-    $authConfig = Array("host" => "localhost", "user" => "feedtheh_hungry", "password" => "Aort101ms!", "catalogue" => "feedtheh_fth");
+    $authConfig = Array("host" => "localhost", "user" => "root", "password" => "Aort101ms!", "catalogue" => "fth");
     $mysqli = mysqli_connect($authConfig["host"], $authConfig["user"], $authConfig["password"], $authConfig["catalogue"]);
     if ($mysqli===false)
         throw new Exception("Failed to instantiate database.  Error(".mysqli_connect_errno().") - ".mysqli_connect_error());

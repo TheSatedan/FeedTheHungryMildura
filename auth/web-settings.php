@@ -93,19 +93,12 @@ class authClass {
 		echo '<meta http-equiv="refresh" content="1;url=web-settings.php">';
 	}
 	public function landingPage() {
+		
 		echo '<table id="full-site">';
 		echo '<tr><td class="left-side-bar">';
 		
 		echo '<table cellspacing=0 cellpadding=5 width=100%>';
-		echo '<tr><td><a href="web-settings.php">DashBoard</a></td></tr>';
-		echo '<tr><td class="blueBox">';
-		
-		if ($this->setGetID) {
-			echo '<font color=white>Module: <br><br>';
-			echo ucfirst ( $this->setGetID ) . '<br>';
-		}
-		
-		echo '</td></tr>';
+		echo '<tr><td><a href="web-settings.php"><img src="Images/logo.png" width=175></a></td></tr>';
 		
 		echo '<tr><td class="sidebar-header"><a class="setPageName" href="web-settings.php?id=Media">Media</a></td></tr>';
 		echo '<tr><td class="sidebar-header"><a class="setPageName" href="web-settings.php?id=Modules">Modules</a></td></tr>';
@@ -124,7 +117,7 @@ class authClass {
 			echo '<tr><td width="100"> - <a class="setPageName" href="web-settings.php?id=' . $setModuleName . '">' . $settingsName . '</a></td></tr>';
 		}
 		echo '<tr><td class="sidebar-header"><a class="setPageName" href="web-settings.php?id=Users">Users</a></td></tr>';
-		echo '<tr><td class="sidebar-header">Settings</td></tr>';
+		echo '<tr><td class="sidebar-header"><a class="setPageName" href="#">Settings</td></tr>';
 		
 		echo '</table>';
 		

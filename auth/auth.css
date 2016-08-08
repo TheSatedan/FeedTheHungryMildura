@@ -21,19 +21,24 @@ Global Styles
 }
 
 .left-side-bar {
-	background-color: #2d3b55;
-	color: #a7afbc;
+	background-color: #e1e1e1;
+	color: #ea7b24;
 	padding: 20px;
 	width: 200px;
 	vertical-align: top;
+	border-right: 2px solid #ea7b24;
 }
 
-
+hr
+{
+	color: #000;
+	height: 2px;
+}
 
 a.activeLink
 {
 	text-decoration: none;
-	color: #222;
+	color: #000;
 }
 
 .sidebar-header {
@@ -54,7 +59,7 @@ a.activeLink
 .setPageName
 {
 
-	color: #a7afbc;
+	color: #000;
 	
 }
 .userLine {
@@ -186,7 +191,7 @@ Featured Gardens Styles
 
 a {
 	text-decoration: none;
-	color: #a1a6ac;
+	color: #ea7b24;
 }
 
 .b {
