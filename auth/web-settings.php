@@ -44,22 +44,26 @@ class authClass {
 		}
 	}
 	public function loginScreen() {
-		echo '<div class="orangeBox"></div>';
-		echo '<table width=100% border=0 height=400px;>';
-		echo '<tr><td><center><img src="../Images/logo.png" height=100></td></tr>';
-		echo '<tr><td><center>';
 		
-		echo '<form method="post" action="web-settings.php?id=processLogin">';
-		echo '<table>';
-		echo '<tr><td>Username:</td><td><input type="text" name="setUsername" placeholder="Username"></td></tr>';
-		echo '<tr><td>Password:</td><td><input type="password" name="setPassword" placeholder="Password"></td></tr>';
-		echo '<tr><td><input type="submit" name="submit" value="Login"></td></tr>';
-		echo '<tr><td></td></tr>';
-		echo '</table>';
-		echo '</form>';
-		
-		echo '</td></tr>';
-		echo '</table>';
+	echo '<center><table width=1024 height=400px;>';
+	echo '<tr><td><br></td></tr>';
+	echo '<tr><td><img src="Images/logo.png"></td></tr>';
+	echo '<tr><td><br><br>&nbsp;<center>';
+
+	echo '<form method="post" action="?id=processLogin">';
+	echo '<table width=450 cellpadding=10 style="border-radius: 5px; border: 3px solid #615f5e;">';
+
+	echo '<tr><td align=right style="color: #615f5e;"><b>USER NAME</td><td colspan=2 style="padding-right: 50px;"><center><input type="text" name="setUsername" placeholder="enter your username..." size=25></td></tr>';
+	echo '<tr><td align=right style="color: #615f5e;"><b>PASSWORD</td><td colspan=2 style="padding-right: 50px;"><center><input type="password" name="setPassword" placeholder="****" size=25></td></tr>';
+	echo '<tr><td ></td><td colspan=2 style="padding-right: 50px;"><center><input id="quoteSubmit" type="image" src="Images/login.png" alt="" onmouseover="javascript:this.src=\'Images/login-over.png\'" onmouseout="javascript:this.src=\'Images/login.png\'"/></td></tr>';
+	echo '<tr><td colspan=3></td></tr>';
+	echo '<tr><td colspan=2 align=right ><font style="font-weight:bold;  color: #615f5e;">Forgetten your password or username?</td><td width=85 style="padding-right: 50px;"><a href="?id=Recover"><img src="Images/recover.png"></a></td></tr>';
+	echo '</table>';
+	echo '</form>';
+
+	
+	echo '</td></tr>';
+	echo '</table>';
 	}
 	private function processLogin() {
 		echo '<table width=100% border=0 height=400px;>';

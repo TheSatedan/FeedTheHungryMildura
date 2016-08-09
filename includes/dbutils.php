@@ -16,7 +16,7 @@ if (session_status() == PHP_SESSION_NONE)
  */
 function databaseConnection()
 {
-    $authConfig = Array("host" => "localhost", "user" => "root", "password" => "Aort101ms!", "catalogue" => "fth");
+    $authConfig = Array("host" => "localhost", "user" => "feedtheh_hungry", "password" => "Aort101ms!", "catalogue" => "feedtheh_fth");
     $mysqli = mysqli_connect($authConfig["host"], $authConfig["user"], $authConfig["password"], $authConfig["catalogue"]);
     if ($mysqli===false)
         throw new Exception("Failed to instantiate database.  Error(".mysqli_connect_errno().") - ".mysqli_connect_error());
@@ -102,7 +102,7 @@ function processMembersLogin() {
 	echo '<div class="space"></div>';
 	echo '<div class="space"></div>';
 	
-	if ($stmt = $dbConnection->prepare ( "SELECT userUsername, userPassword, userStatus FROM users WHERE userUsername=? AND userPassword=? " )) {
+	if ($stmt = $dbConnection->prepare ( "SELECT userID, userUsername, userPassword, userStatus FROM users WHERE userUsername=? AND userPassword=? " )) {
 			
 		$stmt->bind_param ( "ss", $userUsername, $userPassword );
 		$stmt->execute ();
@@ -111,13 +111,14 @@ function processMembersLogin() {
 			
 		if ($stmt->num_rows) {
 
-			$stmt->bind_result ( $userUsername, $userPassword, $userStatus );
+			$stmt->bind_result ( $userID, $userUsername, $userPassword, $userStatus );
 			$stmt->fetch ();
 
 			$_SESSION ['userUsername'] = $userUsername;
 			$_SESSION ['userPassword'] = $userPassword;
 
 			$_SESSION ['userStatus'] = $userStatus;
+			$_SESSION ['userID'] = $userID;
 
 			echo '<br><b><center> Login Successful.<br>';
 

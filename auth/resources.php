@@ -34,7 +34,7 @@ class resources
 	{
 		echo '<b>Resources</b> <a href="web-settings.php?id=Resources&&moduleID=AddResource"><button>Add New</button></a><br><br><br>';
 		echo '<table width=100% cellpadding=5 cellspacing=0 border=1>';
-		echo '<tr><td>Resource Name</td><td>Resource Hyperlink</td></tr>';
+		echo '<tr bgcolor=Black><td>Resource Name</td><td>Resource Hyperlink</td></tr>';
 		$stmt = $this->dbConnection->prepare ( "SELECT resourceID, resourceName, resourceLink FROM resources" );
 		$stmt->execute ();
 		
