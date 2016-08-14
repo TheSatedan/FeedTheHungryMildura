@@ -35,10 +35,31 @@ hr
 	height: 2px;
 }
 
+#supporterRow
+{
+    background-color: #fff;
+}
+#supporterRow:hover
+{
+    background-color: #ea7b24;
+    color: #fff;
+}
+h1
+{
+    font-size: 14pt;
+    color: #ea7b24;
+}
 a.activeLink
 {
 	text-decoration: none;
+	color: green;
+}
+
+a.deactiveLink
+{
+	text-decoration: none;
 	color: #000;
+        
 }
 
 .sidebar-header {

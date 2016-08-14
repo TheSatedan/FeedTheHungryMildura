@@ -14,6 +14,7 @@ if (session_status() == PHP_SESSION_NONE)
  * @return      mysqli instance.
  * @throws      Exception           If connections fails.
  */
+
 function databaseConnection()
 {
     $authConfig = Array("host" => "localhost", "user" => "feedtheh_hungry", "password" => "Aort101ms!", "catalogue" => "feedtheh_fth");
@@ -67,21 +68,24 @@ function processRegister() {
 	
 	global $dbConnection;
 	
-	$username = filter_input ( INPUT_POST, 'username' );
-	$password = filter_input ( INPUT_POST, 'password1' );
-
-	$fullname = filter_input ( INPUT_POST, 'fullname' );
-	$email = filter_input ( INPUT_POST, 'email' );
-	$phone = filter_input ( INPUT_POST, 'phone' );
-	$address = filter_input ( INPUT_POST, 'address' );
-
-	$stmt = $dbConnection->prepare ( "INSERT INTO users (userName, userPassword, userFullname, userEmail, userPhone, userAddress) VALUES (?,?,?,?,?,?)" );
+	$userUsername = filter_input ( INPUT_POST, 'username' );
+	$userPassword = filter_input ( INPUT_POST, 'password1' );
+	$userFullName = filter_input ( INPUT_POST, 'fullname' );
+	$userEmail = filter_input ( INPUT_POST, 'email' );
+	$userPhone = filter_input ( INPUT_POST, 'phone' );
+	$userAddress = filter_input ( INPUT_POST, 'address' );
+	$userStatus = 'Member';
+	$userSupport = 'No';
+	$userJoined = date('Y-m-d');
+	$userNewsletter = filter_input ( INPUT_POST, 'newsletter' );
+	
+	$stmt = $dbConnection->prepare ( "INSERT INTO users (userUsername, userPassword, userFullName, userEmail, userPhone, userAddress, userStatus, userSupport, userJoined, userNewsletter) VALUES (?,?,?,?,?,?,?,?,?,?)" );
 
 	if ($stmt === false) {
-		trigger_error ( $this->dbConnection->error, E_USER_ERROR );
+		trigger_error ( $dbConnection->error, E_USER_ERROR );
 	}
 
-	$stmt->bind_param ( 'ssssss', $username, $password, $fullname, $email, $phone, $address );
+	$stmt->bind_param ( 'ssssssssss', $userUsername, $userPassword, $userFullName, $userEmail, $userPhone, $userAddress, $userStatus, $userSupport, $userJoined, $userNewsletter);
 
 	$status = $stmt->execute ();
 

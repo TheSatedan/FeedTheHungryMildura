@@ -259,8 +259,7 @@ a#supporters:hover {
 	border-bottom: 1px #000 solid;
 }
 
-@
-keyframes slidy { 0% {
+@keyframes slidy { 0% {
 	left: 0%;
 }
 
@@ -367,6 +366,11 @@ img {
 
 }
 
+.leftSide
+{
+	float: left;
+	width: 40%;
+}
 .middleBank {
 	width: 50%;
 	float: right;
@@ -808,6 +812,11 @@ z-index:1;
 	background-color: #fff;
 }
 
+.leftRegister
+{
+	float: left;
+	width: 20%;
+}
 /* ------------- Read More  ------------- */
     .article {
     border-bottom: 1px dotted grey;
